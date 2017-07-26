@@ -1,0 +1,117 @@
+<div class="row m-l-30" id="checkout-page">
+
+  <form role="form" name="form" class="general-form" id="checkoutForm" data-ng-submit="confirmationController.gotoThankyou()"
+    novalidate="novalidate">
+    <div class="checkout-left col-md-12 col-sm-12 col-lg-12 col-xs-12" id="form-contents">
+      <span class="col-md-1 col-sm-3 col-lg-1 col-xs-3 divider-bottom" id="menu-title"><strong>Checkout</strong></span>
+      <span class="pull-right">*All fields are mandatory</span>
+      <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 p-l-0 p-r-0" id="south-indian">
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+            <div class="form-group">
+              <span class="col-md-3 col-sm-12 col-lg-3 col-xs-12" ng-class="{ 'has-error' : form.firstName.$invalid && !form.firstName.$pristine }">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="firstName" data-ng-model="confirmationController.data.firstName" class="form-control" required>
+                <p ng-show="form.firstName.$invalid && !form.firstName.$pristine" class="help-block">First name is required.</p>
+              </span>
+              <span class="col-md-3 col-sm-12 col-lg-3 col-xs-12" ng-class="{ 'has-error' : form.lastName.$invalid && !form.lastName.$pristine }">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="lastName" data-ng-model="confirmationController.data.lastName" class="form-control" required>
+                <p ng-show="form.lastName.$invalid && !form.lastName.$pristine" class="help-block">Last name is required.</p>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+            <div class="form-group">
+              <span class="col-md-6 col-sm-12 col-lg-6 col-xs-12" ng-class="{ 'has-error' : form.address1.$invalid && !form.address1.$pristine }">
+                <label for="address-one">Address1</label>
+                <input type="text" id="address-one" name="address1" data-ng-model="confirmationController.data.addressOne" class="form-control" required>
+                <p ng-show="form.address1.$invalid && !form.address1.$pristine" class="help-block">Address1 is required.</p>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+            <div class="form-group">
+              <span class="col-md-6 col-sm-12 col-lg-6 col-xs-12" ng-class="{ 'has-error' : form.address2.$invalid && !form.address2.$pristine }">
+                <label for="address-one">Address2</label>
+                <input type="text" id="address-two" name="address2" data-ng-model="confirmationController.data.addressTwo" class="form-control" required>
+                <p ng-show="form.address2.$invalid && !form.address2.$pristine" class="help-block">Address2 is required.</p>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+            <div class="form-group">
+              <span class="col-md-3 col-sm-12 col-lg-3 col-xs-12" ng-class="{ 'has-error' : form.city.$invalid && !form.city.$pristine }">
+                <label for="city">City</label>
+                <input type="text" name="city" id="city" data-ng-model="confirmationController.data.city" class="form-control" required>
+                <p ng-show="form.city.$invalid && !form.city.$pristine" class="help-block">City is required.</p>
+              </span>
+              <span class="col-md-3 col-sm-12 col-lg-3 col-xs-12" ng-class="{ 'has-error' : form.state.$invalid && !form.state.$pristine }">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" data-ng-model="confirmationController.data.state" class="form-control" required>
+                <p ng-show="form.state.$invalid && !form.state.$pristine" class="help-block">State is required.</p>
+              </span>
+              <span class="col-md-3 col-sm-12 col-lg-3 col-xs-12" ng-class="{ 'has-error' : form.pin.$invalid && !form.pin.$pristine }">
+                <label for="pin">Pin</label>
+                <input type="text" id="pin" name="pin" data-ng-model="confirmationController.data.pin" class="form-control" required only-digits minlength="6" maxlength="6">
+                <p ng-show="form.pin.$invalid && !form.pin.$pristine" class="help-block">Pin code is required.</p>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+            <div class="form-group">
+              <span class="col-md-3 col-sm-12 col-lg-3 col-xs-12" ng-class="{ 'has-error' : form.phone.$invalid && !form.phone.$pristine }">
+                <label for="mobile">Phone Number</label>
+                <input type="text" name="phone" id="mobile" data-ng-model="confirmationController.data.phone" class="form-control" required only-digits minlength="10" maxlength="10">
+                <p ng-show="form.phone.$invalid && !form.phone.$pristine" class="help-block">Phone number is required.</p>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="checkout-left col-md-12 col-sm-12 col-lg-12 col-xs-12">
+      <span class="col-md-1 col-sm-3 col-lg-1 col-xs-3 divider-bottom" id="menu-title"><strong>Order Summary</strong></span>
+      <div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 p-l-0 p-r-0" id="south-indian">
+        <div class="menu-card p-l-0" id="menu-card">
+          <div class="menu-header p-t-15 p-l-0 col-md-12 col-sm-12 col-lg-12 col-xs-12 divider-bottom">
+            <span class="col-md-6 col-sm-6 col-lg-6 col-xs-6">Item Name</span>
+            <span class="col-md-3 col-sm-3 col-lg-3 col-xs-3 p-l-0">Count</span>
+            <span class="col-md-3 col-sm-3 col-lg-2 col-xs-3 p-l-0">Amount</span>
+          </div>
+          <div class="menu-contents p-b-20">
+            <div class="divider-bottom p-b-20 m-b-10">
+              <span data-ng-show="confirmationController.data.selectedItems.length === 0 || confirmationController.data.selectedItems === undefined">No items to order</span>
+              <ul class="p-l-0 p-t-20">
+                <li class="p-t-30" data-ng-repeat="item in confirmationController.data.selectedItems">
+                  <span class="col-md-6 col-sm-6 col-lg-6 col-xs-6">{{item.name}}</span>
+                  <span class="col-md-3 col-sm-3 col-lg-3 col-xs-3">{{item.count}}
+                  <span class="cursor-pointer" data-ng-click="confirmationController.addItem(item)">[<span class="blue-color">+</span>]</span>
+                  <span class="cursor-pointer" data-ng-click="confirmationController.removeItem(item)">[<span class="blue-color">-</span>]</span>
+                  </span>
+                  <span class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Rs.{{item.price}}</span>
+                </li>
+              </ul>
+            </div>
+            <span class="col-md-6 col-sm-6 col-lg-6 col-xs-6">Total Items</span>
+            <span class="col-md-3 col-sm-3 col-lg-3 col-xs-3">{{confirmationController.data.numberOfItems || '0'}}</span>
+            <span class="col-md-3 col-sm-3 col-lg-3 col-xs-3">Rs.{{confirmationController.data.totalAmount || '0'}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 p-t-20 text-center">
+      <input type="submit" class="btn btn-primary" value="CONFIRM ORDER" data-ng-disabled="form.$invalid || confirmationController.data.selectedItems.length === 0 || confirmationController.data.selectedItems.length === undefined">
+    </div>
+  </form>
+</div>

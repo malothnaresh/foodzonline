@@ -1,0 +1,29 @@
+<div class="row m-l-30" id="checkout-page">
+
+  <div class="checkout-left col-md-12 col-sm-12 col-lg-12 col-xs-12" id="form-contents">
+    <span class="col-md-1 col-sm-3 col-lg-1 col-xs-3 divider-bottom" id="menu-title"><strong>Thank you</strong></span>
+    <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 p-l-30 p-r-0" id="south-indian">
+
+      <form role="form" name="form" class="general-form" id="checkout-form" novalidate="novalidate">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+            <span class="col-md-12 col-sm-12 col-lg-12 col-xs-12"><strong>Thank you</strong> {{thankyouController.data.firstName}} {{thankyouController.data.lastName}}</span>
+            <span class="col-md-12 col-sm-12 col-lg-12 col-xs-12 m-t-20"><strong>We have received your order id </strong> {{thankyouController.data.id}} <strong>for Rs.{{thankyouController.data.totalAmount}}</strong></span>
+            <span class="col-md-12 col-sm-12 col-lg-12 col-xs-12 m-t-20"><strong>We will deliver your order to following address</strong></span>
+            <span class="col-md-12 col-sm-12 col-lg-12 col-xs-12">{{thankyouController.data.addressOne}}</span>
+            <span class="col-md-12 col-sm-12 col-lg-12 col-xs-12">{{thankyouController.data.addressTwo}}</span>
+            <span class="col-md-12 col-sm-12 col-lg-12 col-xs-12">{{thankyouController.data.city}}</span>
+            <span class="col-md-12 col-sm-12 col-lg-12 col-xs-12">{{thankyouController.data.state}}</span>
+            <span class="col-md-12 col-sm-12 col-lg-12 col-xs-12">{{thankyouController.data.pin}}</span>
+            <span class="col-md-12 col-sm-12 col-lg-12 col-xs-12 m-t-20">{{thankyouController.data.phone}}</span>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 p-t-20 text-center">
+    <span class="btn btn-sm btn-primary checkout-btn" data-ng-click="thankyouController.goBackToHome()">Go back to Home</span>
+  </div>
+</div>
